@@ -1,0 +1,146 @@
+$font-family: "IBM Plex Sans", sans-serif;
+$first-color: #ffc400;
+$second-color: #ff9500;
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: $font-family;
+  background-image: url("../imgs/digital.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// start nav
+nav {
+  .navbar-toggler {
+    
+    border: none;
+    &:focus,
+    &:active {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  .navbar-brand {
+    img {
+      width: 40px;
+    }
+  }
+  .offcanvas {
+    width: 200px !important;
+    border-radius: 10px;
+    .offcanvas-body {
+      ul {
+        li {
+          position: relative;
+          cursor: pointer;
+          a, .sun{
+            color: white !important;
+            &:hover {
+              color: #ff9500 !important;
+            }
+            &.active{
+              color: #ff9500 !important;
+            }
+          }
+          
+          .dropdown-menu{
+            a{
+              color: black !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.todo-task {
+  .task {
+    box-shadow: 1px 1px 5px #aaaaaa;
+    .task-head {
+      .btn {
+        transition: 0.3s all;
+        &:hover {
+          background-image: linear-gradient(
+            to right top,
+            #ffc400,
+            #ffb800,
+            #ffad00,
+            #ffa100,
+            #ff9500
+          );
+          color: white;
+        }
+      }
+    }
+    .task-body {
+      ul {
+        li {
+          box-shadow: 1px 1px 5px #aaaaaa;
+          border-radius: 10px;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 2px solid black;
+            border-radius: 50%;
+            left: 10px;
+            cursor: pointer;
+            &:hover{
+              background-image: url("../imgs/checked.png");
+              height: 30px;
+              width: 30px;
+              position: absolute;
+              z-index: 3;
+              top: 50px;
+            }
+          }
+          .text-task {
+            span {
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              display: inline-block;
+              border: 2px solid red;
+              cursor: pointer;
+              z-index: 1;
+              
+            }
+            p {
+              border-bottom: 1px solid black;
+            }
+          }
+        }
+        .date-task {
+          > p {
+            clip-path: polygon(
+              50% 0%,
+              61% 35%,
+              98% 35%,
+              68% 57%,
+              79% 91%,
+              50% 70%,
+              21% 91%,
+              32% 57%,
+              2% 35%,
+              39% 35%
+            );
+            width: 30px;
+            height: 30px;
+            background-color: #aaa;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
